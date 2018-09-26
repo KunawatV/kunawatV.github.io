@@ -1,138 +1,309 @@
 @charset "utf-8";
 /* CSS Document */
-
-@keyframes backgroundcolor {
-	from {background-color:#5E97DB ;}
-	to {background-color:#FF8300;}
+*{
+	margin: 0;
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif"
 }
 
-body{
-	margin: 0 ;
-	font-family:"Segoe UI"
+.layout{
+	position: relative;
+	display: grid;
+	height: 100vh;
+	grid-template-columns: 50% 50%;
+	z-index: 10;
 }
-a{
+
+.left{
+	padding: 20px;
+	position: relative;
+	z-index: 10;
+}
+
+
+.left .logo img{
+	height:60px;
+}
+.left .logo{
+	display: inline;
+}
+.left h2{
+	position:relative;
+	top:-18px;
+	font-size: 2rem;
+}
+
+.left .text{
+	width: 75%;
+	height: 600px;
+	float: right;
+	margin-right: 15px;
+}
+
+.left .domathgood{
+	margin-top: 120px;
+	font-size: 2rem;
+}
+
+.greenline{
+	background-color:#28B034;
+	max-height: 10px;
+	min-height: 5px;
+	max-width: 500px;
+	min-width: 200px;
+	border-radius: 10px;
+	margin-bottom: 24px;
+}
+
+.info{
+	font-size: 1.2rem;
+}
+
+.left .button{
+	margin-top:2em;
+	float: right;
+	display: block;
+	font-size: 1.5rem;
+	padding: 18px 50px;
+	background-color: #A820D6;
+	border: none;
+	border-radius: 16px;
+	color:white;
+	z-index: 10;
 	text-decoration: none;
 }
-header{
+.left .button:hover{
+	background-color:#C561E7;
+}
+
+.left a{
+	position: relative;
+	float: right;
+	color: #F19C00;
+	font-size: 16px;
+	font-weight: 600;
+	margin-top: 0.5em;
+	z-index: 10;
+}
+
+
+
+.right{
+	background-color: #6CB9E7;
+	height: 100%;
+	background-image: url(img/Image.png);
+	background-position: left;
+	background-size: cover;
+}
+
+
+
+#video{
+	display: block;
+	margin-top: 30%;
+		
+}
+
+.right #video iframe{
+	margin: auto;
+	display: block;
+	z-index: 1;
+	overflow: hidden;
+}
+
+
+.learnmore{
+	position: relative;
+	display: block;
+	background-color: #F19C00;
+	border: none;
+	padding: 18px 15px;
+	font-size: 1.25rem;
+	color:white;
+	margin: 15px auto;
+	z-index: 10;
+}
+
+.learnmore:hover{
+	background-color:#FFBA3C;
+}
+
+.six img{
+	position: relative;
+	top: -200px;
+	right: 50px;
+}
+
+
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 20; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+	
+}
+
+.overlay{
+	margin-top: 60px;
+	display: block;
+}
+
+.overlay iframe{
+	display: block;
+	margin: 0 auto;
+	
+}
+.signuprow{
+	margin-top: 2rem;
+}
+
+.signup{
+	display: block;
+	margin: 0 auto;
+	font-size: 1.5rem;
+	padding: 24px;
+	border-radius: 32px;
+	background-color: #6CB9E7;
+	color: white;
+	text-align: center;
+	width: 200px;
+	text-decoration: none;
+	
+}
+
+#cloud{
+	z-index: 1;
 	position: fixed;
-	background-color:#5E97DB; 
 	width: 100%;
-	padding: 0;
-	height: 80px;
-	z-index: 100;
+	height: auto;
+	bottom: -15%;
 }
-header h1 {
-	float: left;
-	font-family: "segoe UI";
-	margin-left: 5%;
-	margin-top: 40px;
+.support{
+	position: fixed;
+	width:25%;
+	z-index: 30;
+	bottom: 0;
 }
-header h1 a{
-
-	color: white;
-}
-header h1 a:hover {
-	color: #FFC17F;
-}
-header ul{
-	display: inline-block
-}
-header ul li{
-	display: inline-block;
-	list-style-type: none;
-	font-family: "segoe UI";
-	color: white;
-	font-weight: 400;
-	font-size: 24px;
-	margin-top: 20px;
-	padding: 10px;
-}
-header ul li a{
-	color: white;
-}
-
-header ul li a:hover {
-	color: #FFC17F;
-}
-
-.main {
-	background-color:#5E97DB ;
-	font-family:"Segoe UI";
-	color: white;
-	height:700px;
-	animation-name: backgroundcolor;
-	animation-duration: 3s;
-	animation-direction: reverse;
-}
-
-.column img{
-	position: relative;
-	display: block;
-	width: 550px;
-	margin: 0 auto;
-	top: 11px;
-}
-#kuna{
-	position: absolute;
-	top: 200px;
-	margin: 0 auto;
-	text-align: center;
-	font-size: 140px;
-	z-index: 0;
+#support{
+	margin: 0.5rem;
+	z-index: 30;
 	width: 100%;
-	word-spacing: 1em;
 }
 
-/*
-#kuna{
-	position:relative;
-	display:block;
-	text-align: left;
-	top:-350px;
-	font-size: 120px;
-	z-index: 0;
-	text-transform: uppercase;
+@media only screen and (max-width:1145px){
+	.right #video iframe{
+		width: 373px;
+		height: 210px;
+	}
+	.right #video{
+		margin-top: 250px;
+	}
+	.left .domathgood{
+		margin-top: 20px;
+		font-size: 1.5rem;
+	}
+	.support{
+		width:40%;
 }
-#what{
-	position:absolute;
-	display:block;
-	text-align: left;
-	top: 40%;
-	font-size: 180px;
-	right: 50%;
-	z-index: 2;
-	text-transform: uppercase;
+
+@media only screen and (max-width:800px){
+
+	.layout{
+		grid-template-columns: 100%;
+		grid-template-rows: 95% 100%;
+	}
+	.right{
+		grid-row: 1/2;
+	}
+	
+	.left{
+		gird-row: 2/3;
+		padding: 0;
+	}
+	.left .text{
+		margin: 0 auto;
+		float: none;
+		text-align: center;
+	}
+	.left .domathgood{
+		font-size: 1.2rem;
+		text-align: center;
+	}
+	.greenline{
+		margin: 0 auto 32px;
+	}
+	.left .button{
+		margin-top:1em;
+		text-align: center;
+		float: none;
+		display: block;
+		font-size: .8rem;
+		
+	}
+	.info{
+		font-size: 1rem;
+	}
+	
+	.left a{
+		float: none;
+		margin: 0 auto 24px;
+		text-align: center;
+		display: block;
+	}
+	.right #video iframe{
+		width: 320px;
+		height: 180px;
+	}
+	
+	.logo{
+		position: fixed;
+		top: 0;
+		display: block;
+		width: 100%;
+		margin: 0;
+		background-color: white;
+		z-index: 200;	
+	}
+	.right #video iframe{
+		width:560px;
+		height: 315px;
+	}
+	.support{
+		width: 100%;
+		top: 0;
+		right: 0;
+	}
+	#support{
+		height: 60px;
+		width: auto;
+		float: right;
+		
+	}
 }
-*/
-.aboutme{
-	position: relative;
-	text-align: left;
-	margin: 30px 8%;
-	padding-bottom: 150px;
-}
-.aboutme h1{
-	text-align: center;
-}
-.button h2{
-	font-size: 1.2em;
-	width: 130px;
-	font-weight: 500;
-}
-.button {
-	position: relative;
-	display: block;
-	width: 120px;
-	height: 60px;
-	padding: 0 25px;
-	border: 1px solid #FFC17F;
-	top: -80px;
-	left: 250px;
-	margin: 0 auto;
-	background-color: #FFC17F;
-	border-radius: 30px;
-	z-index: 100;
-	color: black;
-}
-.button:hover {
-	color: white;
+
+@media only screen and (max-width:575px){
+
+	.right #video iframe{
+		width:300px;
+		height: 176px;
+	}
+	.support{
+		position: absolute;
+		top: 150px;
+		z-index: 1;
+	}
+	#support{
+		display: block;
+		float: none;
+		margin: 0 auto;
+		background-color: white;
+		padding: 10px;
+		
+	}
 }
