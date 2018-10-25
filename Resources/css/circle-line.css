@@ -1,0 +1,51 @@
+@charset "utf-8";
+/* CSS Document */
+
+.circleline{
+	width: 100%;
+	text-align: center;
+}
+.circle{
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	margin: 0 12px;
+	border-radius: 12px;
+}
+.circle.one{
+	background-color: #28B034;
+}
+.circle.two{
+	background-color: #0CDB39;
+}
+.circle.three{
+	background-color: #097AE6;
+}
+.circle.four{
+	background-color: #099FE6;
+}
+.circle.five{
+	background-color: #F19C00;
+}
+.circle.six{
+	background-color: #7328A4;
+}
+.circle.seven{
+	background-color: #A820D6;
+}
+
+.contact{
+	width: 100%;
+	margin-top: 2rem;
+}
+.contact .text{
+	text-align: center;
+}
+@media only screen 
+	and (max-width :370px) {
+		.circle{
+			width: 18px;
+			height: 18px;
+			margin: 0 8px;
+		}
+}
