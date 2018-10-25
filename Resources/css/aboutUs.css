@@ -1,10 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
 
-.nav .AboutUs{
-	color: #A820D6!important;
-}
-
 .hero.aboutUs{
 	background-image: url(../ForNowPic/Math-Mate.png);
 	background-position: center;
