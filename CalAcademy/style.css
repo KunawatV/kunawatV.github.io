@@ -1,0 +1,264 @@
+@charset "utf-8";
+/* CSS Document */
+
+*, h1, h2, h3, h4{
+	marign:0;	
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	padding: 0;
+}
+a{
+	text-decoration: none;
+}
+body{
+	margin: 0;
+}
+/* Header */
+header{
+	height: 64px;
+	background-color: white;
+	width: 100%;
+	display: block;
+	position: fixed;
+	z-index: 10;
+}
+header .logo{
+	margin-top: 12px;
+	margin-left: 24px;
+	font-size: 32px;
+	color: black;
+	display: inline-block;
+}
+header .logo h3{
+	display: inline-block;
+	margin: 0;
+	font-weight: lighter;
+}
+header .logo strong{
+	font-weight: bold;
+}
+header nav{
+	display: inline-block;
+	margin-right: 24px;
+	margin-top: 12px;
+	float: right;
+}
+header nav li{
+	display: inline-block;
+	font-size: 18px;
+	margin: 0 16px;
+}
+header ul{
+	display: inline-block;
+}
+.mobile{
+	display: none;
+}
+/* hero */
+.hero{
+	background-color: rgba(216,216,216,1.00);
+	display: grid;
+	grid-template-columns: 60% auto;
+	grid-column-gap: 24px;
+	width: 100%;
+	padding: 96px 24px 32px 24px;
+	box-sizing: border-box;
+}
+.hero img{
+	width: 100%;
+}
+.hero .text{
+	display: inline-block;
+	width: auto;
+}
+.hero .text h1{
+	font-size: 3rem;
+}
+.hero .text button{
+	display: block;
+	width: 100%;
+	padding: 8px 0;
+	background-color: rgba(74,74,74,1.00);
+	color: white;
+	border: none;
+	margin-top: 4rem;
+	font-size: 1.5rem;
+}
+/* Blog Main */
+.blog{
+	display: grid;
+	grid-template-columns: 60% 40%;
+	width: 100%;
+}
+.blog .highlight{
+	box-sizing: border-box;
+	padding: 32px 24px;
+}
+.blog .highlight img{
+	width: 100%;
+}
+.blog .highlight h2{
+	margin: 32px 0 24px;
+	font-size: 3rem;
+}
+/* Blog List */
+.blog .list{
+	border-left: 2px solid rgba(216,216,216,1.00);
+	box-sizing: border-box;
+	height: 100%;
+}
+.blog .list .box{
+	display: grid;
+	padding: 16px 0 16px 16px;
+	width: 100%;
+	grid-template-columns: 35% 65%;
+	box-sizing: border-box;
+	border-bottom: 2px solid rgba(216,216,216,1.00);
+}
+.blog .list img{
+	width: 100%;
+}
+.blog .list .text{
+	margin-left: 24px;
+}
+.blog .list .box:hover {
+	background-color: rgba(216,216,216,1.00);
+}
+.blog .list a{
+	color: deepskyblue;
+}
+.blog  .list p{
+	margin: 8px 0;
+}
+/* Start Learning */
+.learning{
+	background-color: rgba(216,216,216,1.00);
+	width: 100%;
+	padding-bottom: 32px;
+}
+.learning h2{
+	text-align: center;
+	padding-top: 32px;
+	margin-bottom: 32px;
+	font-size: 2rem;
+}
+.learning .grid{
+	display: flex;
+	height: auto;
+	padding: 0 72px;
+	width: 100%;
+	flex-wrap: wrap;
+	justify-content: center;
+	box-sizing: border-box;
+}
+.learning .grid .box{
+	background-color: white;
+	width: 400px;
+	height:400px;
+	margin: 16px;
+}
+.learning .grid .box img{
+	width: 100%;
+}
+.grid .box h2, .grid .box span, .grid .box p{
+	margin: 16px;
+	text-align: left;
+	color: black;
+}
+/* Thesis */
+h2.thesis{
+	text-align: center;
+	font-size: 2rem;
+}
+.thesis video{
+	width: 100%;
+}
+.thesis .list{
+	border: none;
+}
+.thesis .list .box{
+	border: none;
+}
+/*footer */
+footer{
+	padding-top: 16px;
+	border-top: 2px solid rgba(216,216,216,1.00);
+}
+footer h4{
+	margin-left: 24px;
+	display: inline-block;
+}
+footer ul{
+	display: inline-block;
+	float: right;
+}
+footer li{
+	display: inline-block;
+	margin-right: 24px;
+}
+@media only screen and (max-width: 850px){
+	.desktop{
+		display: none!important;
+	}
+	.mobile{
+		display: inherit!important;
+	}
+	.hero{
+		display: block;
+	}
+	.blog .highlight{
+		display: none;
+	}
+	.blog{
+		display: block;
+	}
+	.blog .list{
+		border: none;
+	}
+	.blog .list .box{
+		display: block;
+		padding: 16px;
+		width: 100%;
+		box-sizing: border-box;
+	}
+	.blog .list .box img{
+		width :100%;
+		height: 300px;
+		object-fit: cover;
+  		object-position: center; 
+	}
+	.learning{
+		background-color: white;
+	}
+	.learning .grid .box{
+		background-color: rgba(216,216,216,1.00)!important;
+		height: auto;
+		margin:8px;
+		width: 300px;
+	}
+	.learning img, .learning span, .learning p{
+		display: none;
+	}
+	.learning .grid .box h2{
+		padding-bottom: 24px;
+		font-size: 1rem;
+		margin: 0;
+		text-align: center;
+	}
+	.learning .grid{
+		padding: 0;
+	}
+	.thesis .highlight{
+		display: block;
+		padding: 0;
+	}
+	.thesis .highlight video{
+		width: 100%;
+		display: block;
+	}
+	.thesis .list{
+		display: none;
+	}
+	footer ul{
+		display: none;
+	}
+}
