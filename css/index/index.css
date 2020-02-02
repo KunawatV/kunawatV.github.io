@@ -25,6 +25,11 @@
 	font-size: 2rem;
 	text-decoration: underline;
 }
+.box1 .main span:hover{
+	background-color: yellow;
+	transition-duration: 0.5s;
+	transition-timing-function: ease-in;
+	}
 .box1 .mini{
 	font-size: 1rem;
 	margin-bottom: 0.5rem;
@@ -51,10 +56,10 @@
 	display: flex;
 	flex-wrap: wrap;
 	margin: auto;
-	justify-content: space-around;
+	justify-content: space-between;
 }
 .project{
-	width: 45%;
+	width: 48%;
 	margin: 2rem 0;
 	box-shadow: 0 0 10px 0 rgba(0,0,0,0.32);
 }
@@ -90,6 +95,11 @@
 	margin-top: 1rem;
 	width: 100%;
 }
+.project .pdf{
+	float: right;
+	margin: 1rem;
+	font-weight: bold;
+}
 
 /*.project .blackBottom{
 	display: block;
@@ -110,6 +120,9 @@
 @media only screen and (max-width:1200px){
 	.project{
 		width: 100%;
+	}
+	.box1 .main span{
+		background-color: yellow;
 	}
 }
 @media only screen and (max-width:800px){
@@ -143,9 +156,7 @@
 		font-weight: bold;
 		font-size: 1.5rem;
 	}
-	.box1 .main span{
-		background-color: yellow;
-	}
+	
 	.box1 .bold{
 		font-size: 1rem;
 	}

@@ -5,6 +5,9 @@
 	font-family: Helvetica,"Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Arial, "sans-serif";
 	text-decoration: none;
 }
+.serif{
+	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
+}
 
 .container{
 	max-width: 1120px;

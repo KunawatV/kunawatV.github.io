@@ -1,21 +1,43 @@
 /* CSS Document */
 .container .template{
 	grid-column: 1/5;
-	margin-top: 140px;
 }
 img{
-	width: 80%;
 	margin: 2rem auto;
 	display: block;
 }
 .hero{
 	width: 100%;
+	height: 80vh;
+	background-position: center;
+	background-size: cover;
+}
+.intro{
+	margin-top: 2rem;
+}
+.intro h1{
+	width: 80%;
+	margin-bottom: 1rem;
+}
+.intro h2{
+	font-weight: lighter;
+	font-size: 1.5rem;
+}
+.intro .role{
+	margin-top: 2rem;
+}
+.intro .role h2{
+	font-weight: bold;
 }
 .picture{
-	width: 80%;
+	width: 90%;
 }
 .text{
-	margin-bottom: 4rem;
+	width: 70%;
+	margin: 4rem auto;
+}
+h1{
+	font-size: 4rem;
 }
 h2{
 	font-size: 2rem;
@@ -33,7 +55,25 @@ h4{
 }
 
 @media only screen and (max-width:800px){
+	.intro h1{
+		width: 80%;
+		font-size: 3rem;
+	}
 	.picture{
 		width: 100%;
+	}
+	.text{
+		width: 90%;
+	}
+}
+@media only screen and (max-width:425px){
+	.intro h1{
+		font-size: 2rem;
+	}
+	.intro h2{
+		font-size: 1rem;
+	}
+	.text{
+		margin: 2rem auto;
 	}
 }
