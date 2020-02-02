@@ -2,30 +2,129 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Monash Film Festival</title>
+<title>Kunawat</title>	
+<link href="css/layout/layout.css" rel="stylesheet" type="text/css">
+<link href="css/layout/header.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+<script src="./css/layout/header.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-<link href="css.css" rel="stylesheet" type="text/css">
+<link href="css/index/projectsIndex.css" rel="stylesheet" type="text/css">
+<link href="css/index/index.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-	<div class="hero">
-		<div class="stuff">
-			<img src="./Film festival logo .png" alt="">
-			<h1>Monash Design 
-				<br>
-				Film Festival</h1>
+	<section class="intro">
+		<div class="container">
+			<div class="box2"></div>
+			<div class="box1">
+				<p class="mini">
+					Studying Industrial Design and Finance at Monash University
+				</p>
+				<p>
+					I am interested in the Design of Business to help innovators co-create a sustainable business. 
+				</p>
+				<p class="bold">
+					Currently looking for internships.
+				</p>
+			</div>
 		</div>
-	</div>
-	<div class="info" >
-		<a href="./MAP.pdf" class="map" target="new">
-			<p>Map</p>
-		</a>
-		<a href="./final_programme.pdf" class="schedule" target="new">
-			<p>Schedule</p>
-		</a>
-		<a href="https://drive.google.com/open?id=1iIZGEAbkabU4Z_0gSCJMRe9CPZHDHOyZ" class="schedule" target="new">
-			<p>Video</p>
-		</a>
-	</div>
+	</section>
+	
+		<!-- Header -->
+	
+	<header class="header">
+		<div class="container">
+			<div class="logo">
+					<h3><a href="./index.html">Kunawat</a></h3>
+			</div>
+			<div class="menu" onclick="myFunction(this)">
+			  <div class="bar1"></div>
+			  <div class="bar2"></div>
+			  <div class="bar3"></div>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="./index.html">Projects</a></li>
+					<li><a href="contact.html">Contact</a></li>
+					<li><a href="./about.html">About</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	
+	<!-- End of Header -->
+	
+	<section class="projects container" id="projects">
+		
+			<a href="./projects/math-mate.html" class="project">
+				<div class="picture" id="mathmate"></div>
+				<div class="details">
+					<div class="text">
+						<p>
+							Math Mate || Digital Marketing, Graphic Design
+						</p>
+						<h3>
+							Re-branding, and Digital data Collection for Analysis.
+						</h3> 
+					</div>
+				</div>
+				<div class="blackBottom"></div>
+			</a>
+		
+			<a href="./projects/Speaker/Speaker.pdf" target="new" class="project">
+				<div class="picture" id="speaker"></div>
+				<div class="details">
+					<div class="text">
+						<p>
+							Speaker || Industrial Design
+						</p>
+						<h3>
+							Speaker that can only be made by 3D Printing
+						</h3> 
+					</div>
+				</div>
+				<div class="blackBottom"></div>
+			</a>
+		
+			<a href="./projects/3DPrinter/3DPrinter.pdf" target="new" class="project">
+				<div class="picture" id="printer3D"></div>
+				<div class="details">
+					<div class="text">
+						<p>
+							3D Printer || Industrial Design, Graphic Design
+						</p>
+						<h3>
+							3D printer from scratch using open source.
+						</h3> 
+					</div>
+				</div>
+				<div class="blackBottom"></div>
+			</a>
+		
+			<a href="./projects/aboon.html" class="project">
+				<div class="picture" id="aboon"></div>
+				<div class="details">
+					<div class="text">
+						<p>
+							Aboon || UX/UI, Graphic Design, Founder
+						</p>
+						<h3>
+							Application that promotes shared experience.
+						</h3> 
+					</div>
+				</div>
+				<div class="blackBottom"></div>
+			</a>
+		
+		
+		
+	</section>
+
+	
+	<section class="CTA">
+		<a class="button contact" href="contact.html">Contact Now</a>
+	</section>
+	
 </body>
 </html>
