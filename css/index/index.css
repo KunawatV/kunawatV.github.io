@@ -27,7 +27,7 @@
 }
 .box1 .main span:hover{
 	background-color: yellow;
-	transition-duration: 0.5s;
+	transition-duration: 0.25s;
 	transition-timing-function: ease-in;
 	}
 .box1 .mini{
