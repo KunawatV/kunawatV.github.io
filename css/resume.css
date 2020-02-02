@@ -1,6 +1,11 @@
 /* CSS Document */
 .resume{
-	margin-top: 40vh
+	flex-grow: 1;
+}
+.full{
+	display: flex;
+	height: 100vh;
+	justify-content: center;
 }
 .box{
 	grid-column: 2/4;
@@ -64,10 +69,5 @@ form.emailjs-error:after {
 @media only screen and (max-width:1200px){
 	.box{
 		grid-column: 1/5;
-	}
-}
-@media only screen and (max-width:425px){
-	.resume{
-		margin-top: 30vh;
 	}
 }

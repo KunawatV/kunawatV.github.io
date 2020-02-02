@@ -8,7 +8,6 @@
 .box1{
 	grid-column: 2/5;
 	grid-row: 1/2;
-	font-size: 2rem;
 	margin: auto 0 auto 25%;
 }
 .box2{
@@ -19,15 +18,21 @@
 	height: 60vh;
 	grid-row: 1/2;
 }
-.box1 p{
-	font-size: inherit;
+.box1 .main{
+	font-size: 2rem;
+}
+.box1 .main span{
+	font-size: 2rem;
+	text-decoration: underline;
 }
 .box1 .mini{
 	font-size: 1rem;
+	margin-bottom: 0.5rem;
 }
 .box1 .bold{
 	text-align: end;
 	margin-top: 2rem;
+	font-size: 1.5rem;
 }
 .bold{
 	font-weight: bolder;
@@ -49,40 +54,50 @@
 	justify-content: space-around;
 }
 .project{
-	width: 48%;
-	margin-bottom: 2%;
+	width: 45%;
+	margin: 2rem 0;
+	box-shadow: 0 0 10px 0 rgba(0,0,0,0.32);
 }
 .project .picture{
 	background-position: center;
 	background-size: cover;
-	height: 550px;
-	width: 550px;
+	height: 400px;
 }
 .project .details{
 	width: 100%;
 	height: auto;
+	padding: 0 1.5rem 1.5rem;
 	box-sizing: border-box;
 	
 }
-.project .details p,h3{
+.project .details p,.project .details h3{
 	color: black;
-}
+	display: inline;
+} 
+/*
+.project .details p:hover ,.project .details h3:hover{
+	background: #fcf113;
+} 
+*/
 .project .details p{
-	margin-top: 1rem;
 	font-size: 1rem;
 }
 .project .details h3{
-	margin-top: 1rem;
 	font-size: 2rem;
 }
+.project .details span{
+	display: block;
+	margin-top: 1rem;
+	width: 100%;
+}
 
-.project .blackBottom{
+/*.project .blackBottom{
 	display: block;
 	height: 5px;
 	width: 100%;
 	background-color: black;
 	margin-top: 1rem;
-}
+}*/
 .CTA{
 	margin: 100px 0;
 	width: 100%;
@@ -95,22 +110,20 @@
 @media only screen and (max-width:1200px){
 	.project{
 		width: 100%;
-		height: 600px
 	}
 }
 @media only screen and (max-width:800px){
 	.project{
-		height: 450px;
 		width: 100%;
-		margin: 0;
+		margin-top: 1rem;
 	}
 	.projects.container{
-		margin: 0;
-		max-width: 100%;
+		margin: auto;
+		max-width: 80%;
 	}
 	.box1{
 		font-size: 1rem;
-		grid-column: 1/4;
+		grid-column: 2/5;
 	}
 	.learnMore{
 		margin-top: 50px;
@@ -123,7 +136,20 @@
 	}
 }
 @media only screen and (max-width:425px){
-	.project{
+	.project .details h3{
+	font-size: 1.5rem;
+	}
+	.box1 .main, .box1 .main span{
+		font-weight: bold;
+		font-size: 1.5rem;
+	}
+	.box1 .main span{
+		background-color: yellow;
+	}
+	.box1 .bold{
+		font-size: 1rem;
+	}
+	.project .picture{
 		height: 300px;
 	}
 }

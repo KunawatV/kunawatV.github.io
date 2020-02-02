@@ -60,7 +60,7 @@ nav li a:hover{
  	 transform: rotate(45deg) translate(-8px, -8px);
 }
 
-@media only screen and (max-width:800px){
+@media only screen and (max-width:425px){
 	.menu{
  		display: block;
 		float: right;
@@ -71,7 +71,7 @@ nav li a:hover{
 		transition-duration: 0.5s;
 	}
 	header.change {
-		height: 200px;
+		height: 150px;
 	}
 	header .container{
 		display: block;
