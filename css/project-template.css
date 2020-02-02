@@ -67,6 +67,9 @@ h4{
 	}
 }
 @media only screen and (max-width:425px){
+	.hero{
+		height: 60vh;
+	}
 	.intro h1{
 		font-size: 2rem;
 	}
