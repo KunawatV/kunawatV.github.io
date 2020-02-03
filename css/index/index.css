@@ -1,0 +1,97 @@
+@charset "utf-8";
+/* CSS Document */
+
+.intro{
+	margin: 15rem auto 5rem;
+}
+.box1{
+	grid-column: 1/3;
+	font-size: 1.5rem;
+}
+.box1 p{
+	font-size: inherit;
+}
+
+.learnMore{
+	float: right;
+	margin-top: 100px;
+}
+.box2{
+	grid-column: 4/5;
+	display: grid;
+	grid-template-columns: 1fr 10px;
+}
+.blackLine{
+	grid-column: 2/3;
+}
+
+.projects{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+.project{
+	width: 50%;
+	height: 550px;
+	background-position: center;
+	background-size: cover;
+}
+.project .details{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.68);
+	display: none;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+	transition-duration: 3s;
+	padding: 5rem;
+	box-sizing: border-box;
+}
+.project .details p,h3{
+	color: white;
+}
+.project .details h3{
+	font-size: 1.25rem;
+}
+.project:hover .details{
+	display: flex;
+}
+.CTA{
+	margin: 100px 0;
+	width: 100%;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	font-size: 1rem;
+}
+
+@media only screen and (max-width:1200px){
+	.project{
+		width: 100%;
+		height: 600px
+	}
+}
+@media only screen and (max-width:800px){
+	.project{
+		height: 450px;
+	}
+	.box1{
+		font-size: 1rem;
+		grid-column: 1/4;
+	}
+	.learnMore{
+		margin-top: 50px;
+	}
+	.intro{
+		margin: 10rem auto 4rem;
+	}
+	.CTA{
+		margin: 50px auto;
+	}
+}
+@media only screen and (max-width:425px){
+	.project{
+		height: 300px;
+	}
+}

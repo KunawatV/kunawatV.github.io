@@ -1,0 +1,44 @@
+*{
+	margin: 0;
+	font-size: 16px;
+	font-family: 'Nunito',Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+	text-decoration: none;
+}
+
+.container{
+	max-width: 1120px;
+	margin: auto;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.button{
+	background-color: black;
+	color: white;
+	border: none;
+	padding: 1rem;
+	font-size: inherit;
+	transition-duration: 0.5s;
+	text-decoration: none;
+}
+
+.button:hover{
+	background-color: grey;
+}
+
+.blackLine{
+	background-color: black;
+	width: 10px;
+	height: 100%;
+}
+
+@media only screen and (max-width:1200px){
+	.container{
+		max-width: 760px;
+	}
+}
+@media only screen and (max-width:800px){
+	.container{
+		max-width: 80%;
+	}
+}

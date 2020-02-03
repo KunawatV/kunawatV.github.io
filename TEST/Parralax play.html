@@ -1,0 +1,242 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>A grouped pure CSS parallax demo by Keith Clark</title>
+<meta name="description" content="Demonstration of grouping content in pure CSS parallax scrolling website">
+<style>
+
+  /* Parallax base styles
+  --------------------------------------------- */
+
+  .parallax {
+    height: 500px; /* fallback for older browsers */
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-perspective: 300px;
+    perspective: 300px;
+  }
+
+
+
+  .parallax__layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+
+
+
+
+  /* demo styles
+  --------------------------------------------- */
+
+  body, html {
+    overflow: hidden;
+  }
+
+  body {
+    font: 100% / 1.5 Arial;
+  }
+
+  * {
+    margin:0;
+    padding:0;
+  }
+
+  .parallax {
+    font-size: 200%;
+  }
+
+   /* centre the content in the parallax layers */
+  .title {
+    text-align: left;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+	.grid-l1{
+		 position: absolute;
+    	left: 0%;
+	}
+	.grid-l2{
+		 position: absolute;
+    	left: 25%;
+	}
+	.grid-l3{
+		 position: absolute;
+    	left: 50%;
+	}
+	.grid-l4{
+		 position: absolute;
+    	left: 75%;
+	}
+	.grid-r1{
+		 position: absolute;
+    	right: 0%;
+	}
+	.grid-r2{
+		 position: absolute;
+    	right: 25%;
+	}
+	.grid-r3{
+		 position: absolute;
+    	right: 50%;
+	}
+	.grid-r4{
+		 position: absolute;
+    	right: 75;
+	}
+	.top-50{
+		top: 50%;
+	}
+	.top-75{
+		top: 75%;
+	}
+	.top-25{
+		top: 25%;
+	}
+
+
+
+  /* style the groups
+  --------------------------------------------- */
+
+  #intro {
+    z-index: 1; /* slide over group 2 */
+  }
+	#intro .parallax__layer{
+		background-color: white;
+	}
+
+  #group2 {
+   z-index: 4;
+  }
+	#group2 .parallax__{
+	background-color: white;
+	}
+
+  #group3 {
+    z-index: 1; /* slide over group 2 and 4 */
+  }
+  #group3 .parallax__layer--base {
+    background: rgb(153,216,101);
+  }
+
+  #group4 {
+    z-index: 2; /* slide under group 3 and 5 */
+  }
+  #group4 .parallax__layer--deep {
+    background: rgb(184,223,101);
+  }
+
+  #group5 {
+    z-index: 3; /* slide over group 4 and 6 */
+  }
+  #group5 .parallax__layer--base {
+    background: rgb(214,229,100);
+  }
+
+  #group6 {
+    z-index: 2; /* slide under group 5 and 7 */
+  }
+  #group6 .parallax__layer--back {
+    background: rgb(245,235,100);
+  }
+
+  #group7 {
+    z-index: 3; /* slide over group 7 */
+  }
+  #group7 .parallax__layer--base {
+    background: rgb(255,241,100);
+  }
+	
+	/* my own add on */
+	img{
+		height: 500px;
+		margin: -250px 0;
+	}
+
+
+  }
+</style>
+<link href="css.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<div class="parallax">
+	<div id="intro" class="parallax__group">
+      <div class="parallax__layer speed-1">
+        <div class="title">Hi, I am Kunawat
+		  <p>I am studying at Monash University</p>
+		</div>
+      </div>
+    </div>
+		
+	<div class="parallax__group"> </div>
+
+  
+	  
+    <div id="mathmate" class="parallax__group">
+      
+      	<div class="parallax__layer speed-2">
+		  <img class="grid-l3 top-50" src="../projects/mathMate/Math Mate.jpg" alt="" >
+      	</div>
+		
+		<div class="parallax__layer speed-1">
+        	<div class="grid-l2 top-50" style="text-align: right; font-size: 100px;" > Math Mate</div>
+      	</div>
+		
+		<div class="parallax__layer speed-6">
+			<div class="grid-r4 top-25" style="height: 100px; width: 100px; background-color: red;">
+		  </div>
+    	</div>
+		
+	</div>
+		
+	<div class="parallax__group"> </div>
+	  
+	  <div id="aboon" class="parallax__group">
+      
+      <div class="parallax__layer speed-1">
+		  <img class="grid-l1 top-50" src="../projects/aboon/aboon.png" alt="">
+      </div>
+		
+	<div class="parallax__layer speed-1">
+        <div class="grid-l3 top-50" style="text-align: right; font-size: 100px;" > Aboon Inc</div>
+      </div>
+   </div>
+	  
+	  <div id="??" class="parallax__group" style="z-index: -1">
+      
+      	<div class="parallax__layer speed-3">
+		  <img class="grid-r1 top-50" src="../projects/IB Visual Arts.jpg" alt="" >
+      	</div>
+		
+		<div class="parallax__layer speed-2">
+        	<div class="grid-r3 top-50" style="text-align: right; font-size: 100px;" > Monash
+		</div>
+      </div>
+		  
+    </div>
+		
+	<div id="" class="parallax__group" style="background-color: blue;">
+
+	</div>
+		
+	  
+  </div>
+	
+	
+	
+
+
+</body>
+</html>
