@@ -30,7 +30,7 @@
     // return Math.round((number - offset) / increment ) * increment + offset;
     // }
     function round(number) {
-        let interval = 10
+        let interval = 5
         return Math.round((number) / interval ) * interval;
     }
     // Make sure rounding addds up to 100. Replace all math.round with new round by 20 increment
@@ -53,13 +53,13 @@
     return output;
     }
     let a,b,c,d,abcd,mix;
-    // // Tester
-    //      a = 80;
-    //      b = 11;
-    //      c = 9;
-    //      abcd = [a,b,c]
-    //      mix = round_to_100(abcd)
-    //      console.log(mix.join('-')+'.jpg');
+    // Tester
+        //  a = 80;
+        //  b = 16;
+        //  c = 5;
+        //  abcd = [a,b,c]
+        //  mix = round_to_100(abcd)
+        //  console.log(mix.join('-')+'.jpg');
     
     // Teachable machine thing
     async function init() {
@@ -151,8 +151,8 @@
          c = prediction[2].probability.toFixed(2)*100;
          abcd = [a,b,c]
          mix = round_to_100(abcd)
-         console.log(mix.join('-')+'.png')
-         testImage.src = '../image/'+mix.join('-')+'.png'
+         console.log(mix.join('-')+'.jpg')
+         testImage.src = '../image/'+mix.join('-')+'.jpg'
 
         // finally draw the poses
         drawPose(pose);
