@@ -46,7 +46,9 @@
         width: 200px; 
         height: 200px;
         position: relative;
-        background-color: gray;
+        background-image: url(./image/triangle/Asset\ 20.png);
+        background-repeat: no-repeat;
+        background-position: top;
         }
         #dot{
             margin: 0px;
@@ -56,7 +58,7 @@
             position: absolute;
             left: var(--side);
             top: var(--up);
-            border: 0.5rem solid black;
+            border: 0.5rem solid #FF6666;
             transition: left 0.25s, top 0.25s;
         }
 
@@ -257,8 +259,8 @@
         let bb = prediction[1].probability.toFixed(2);
         let cc = prediction[2].probability.toFixed(2);
 
-        let up =  aa * 0 +  bb* 184 + cc * 184;
-        let side =  aa * 94 +  bb* 0 + cc * 184;
+        let up =  aa * 0 +  bb* 157.2 + cc * 157.2;
+        let side =  aa * 92 +  bb* 0 + cc * 184;
         var r = document.querySelector(':root');
 
           r.style.setProperty('--up', String(up)+"px");
