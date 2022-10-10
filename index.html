@@ -7,6 +7,11 @@
     <title>Document</title>
 
     <style>
+        :root {
+         --up:10px;
+         --side:69px; 
+        }
+
         body{
             margin: 0;
         }
@@ -39,19 +44,20 @@
         .triangle {
         height: auto;
         width: 200px; 
-        height: 200px; 
+        height: 200px;
         position: relative;
         background-color: gray;
         }
         #dot{
             margin: 0px;
-            height: 0px;
+            height: 0px ;
             width: 0px;
             border-radius: 50%;
             position: absolute;
-            left: 184px;
-            top: 184px;
+            left: var(--side);
+            top: var(--up);
             border: 0.5rem solid black;
+            transition: left 1s, top 1s;
         }
 
     </style>
@@ -65,7 +71,7 @@
         <div class="left margin">
             <div id="webcam" class="sm">
                 <canvas id="canvas"></canvas>
-                <!-- <canvas id="canvas" width="200" height="200"></canvas> test  -->
+                <!-- <canvas id="canvas" width="200" height="200"></canvas> -->
             </div>
             
             <div class="triangle sm"> 
@@ -77,8 +83,8 @@
 
         <!-- <div class="image"> -->
         <img style="border-radius: 0px 1rem 1rem 0px;" src="" id="test-image">
-            <!-- <img style="border-radius: 0px 1rem 1rem 0px;" src="./image/0-30-70.jpg" id="test-image"> -->
-        </div>
+        <!-- <img style="border-radius: 0px 1rem 1rem 0px;" src="./image/0-30-70.jpg" id="test-image"> -->
+        
     </div>
 
     
@@ -95,6 +101,14 @@
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
 <script type="text/javascript">
+
+
+
+
+
+
+
+
     // More API functions here:
     // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/pose
 
@@ -167,10 +181,10 @@
         for (let i = 0; i < maxPredictions; i++) { // and class labels
             labelContainer.appendChild(document.createElement("div"));
         }
-        test = document.getElementById("test");
-        for (let i = 0; i < maxPredictions; i++) { // and class labels
-            test.appendChild(document.createElement("div"));
-        }
+        // test = document.getElementById("test");
+        // for (let i = 0; i < maxPredictions; i++) { // and class labels
+        //     test.appendChild(document.createElement("div"));
+        // }
     }
 
     async function loop(timestamp) {
@@ -233,8 +247,32 @@
          console.log(mix.join('-')+'.jpg')
          testImage.src = '../image/'+mix.join('-')+'.jpg'
 
+
+
+
+        //let up = prediction[0].probability.toFixed(2) * 184
+        //let side = prediction[1].probability.toFixed(2) *184
+
+        let aa = prediction[0].probability.toFixed(2);
+        let bb = prediction[1].probability.toFixed(2);
+        let cc = prediction[2].probability.toFixed(2);
+
+        let up =  aa * 0 +  bb* 184 + cc * 184;
+        let side =  aa * 94 +  bb* 0 + cc * 184;
+        var r = document.querySelector(':root');
+
+          r.style.setProperty('--up', String(up)+"px");
+          r.style.setProperty('--side', String(side)+"px");
+
+        console.log(String(up)+"px")
+
+
+
+
+
         // finally draw the poses
         drawPose(pose);
+
     }
 
     
