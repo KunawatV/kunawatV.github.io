@@ -69,10 +69,37 @@
 <!-- <div  >Teachable Machine Pose Model</div> -->
 <!--     <button type="button" onclick="init()">Start</button> -->
 <section class="flex">
+    <div class="main" style="background-color:#000000 ;border-radius: 1rem;">  
+        <div class="left margin">
+            <div id="webcam" class="sm">
+                <canvas id="canvas"></canvas>
+                <!-- <canvas id="canvas" width="200" height="200"></canvas> -->
+            </div>
+            
+            <div class="triangle sm"> 
+                <div id="dot"></div>
+            </div>
+            <div id="label-container"></div>
+        </div>
     
-        <img style="border-radius: 0px 1rem 1rem 0px;" src="" id="test-image">
-        <!-- <img class="main" style="border-radius: 0px 1rem 1rem 0px;" src="./image/0-30-70.jpg" id="test-image"> -->
 
+        <!-- <div class="image"> -->
+        <!-- <img style="border-radius: 0px 1rem 1rem 0px;" src="./image/0-30-70.jpg" id="test-image"> -->
+        
+    </div>
+
+    
+    
+</section>
+<section class="flex">
+    <div class="main" style="background-color:#000000 ;border-radius: 1rem;">  
+        <!-- <div class="image"> -->
+        <img src="" id="test-image">
+        <!-- <img style="border-radius: 0px 1rem 1rem 0px;" src="./image/0-30-70.jpg" id="test-image"> -->
+        
+    </div>
+
+    
     
 </section>
 
@@ -159,13 +186,13 @@
         window.requestAnimationFrame(loop);
 
         // append/get elements to the DOM
-        // const canvas = document.getElementById("canvas");
-        // canvas.width = size; canvas.height = size;
-        // ctx = canvas.getContext("2d");
-        // labelContainer = document.getElementById("label-container");
-        // for (let i = 0; i < maxPredictions; i++) { // and class labels
-        //     labelContainer.appendChild(document.createElement("div"));
-        // }
+        const canvas = document.getElementById("canvas");
+        canvas.width = size; canvas.height = size;
+        ctx = canvas.getContext("2d");
+        labelContainer = document.getElementById("label-container");
+        for (let i = 0; i < maxPredictions; i++) { // and class labels
+            labelContainer.appendChild(document.createElement("div"));
+        }
         // test = document.getElementById("test");
         // for (let i = 0; i < maxPredictions; i++) { // and class labels
         //     test.appendChild(document.createElement("div"));
@@ -183,12 +210,12 @@
         // estimatePose can take in an image, video or canvas html element
         const { pose, posenetOutput } = await model.estimatePose(webcam.canvas);
         // Prediction 2: run input through teachable machine classification model
-        // const prediction = await model.predict(posenetOutput);
-        //  for (let i = 0; i < maxPredictions; i++) {
-        //     const classPrediction =
-        //         prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-        //     labelContainer.childNodes[i].innerHTML = classPrediction;
-        //     }
+        const prediction = await model.predict(posenetOutput);
+         for (let i = 0; i < maxPredictions; i++) {
+            const classPrediction =
+                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+            labelContainer.childNodes[i].innerHTML = classPrediction;
+            }
             // MY OWN INPUT
         //  if(prediction[0].probability.toFixed(2) > prediction[1].probability.toFixed(2)){
         //         test.childNodes[0].innerHTML = "zero";
