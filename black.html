@@ -159,13 +159,13 @@
         window.requestAnimationFrame(loop);
 
         // append/get elements to the DOM
-        const canvas = document.getElementById("canvas");
-        canvas.width = size; canvas.height = size;
-        ctx = canvas.getContext("2d");
-        labelContainer = document.getElementById("label-container");
-        for (let i = 0; i < maxPredictions; i++) { // and class labels
-            labelContainer.appendChild(document.createElement("div"));
-        }
+        // const canvas = document.getElementById("canvas");
+        // canvas.width = size; canvas.height = size;
+        // ctx = canvas.getContext("2d");
+        // labelContainer = document.getElementById("label-container");
+        // for (let i = 0; i < maxPredictions; i++) { // and class labels
+        //     labelContainer.appendChild(document.createElement("div"));
+        // }
         // test = document.getElementById("test");
         // for (let i = 0; i < maxPredictions; i++) { // and class labels
         //     test.appendChild(document.createElement("div"));
@@ -183,12 +183,12 @@
         // estimatePose can take in an image, video or canvas html element
         const { pose, posenetOutput } = await model.estimatePose(webcam.canvas);
         // Prediction 2: run input through teachable machine classification model
-        const prediction = await model.predict(posenetOutput);
-         for (let i = 0; i < maxPredictions; i++) {
-            const classPrediction =
-                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-            labelContainer.childNodes[i].innerHTML = classPrediction;
-            }
+        // const prediction = await model.predict(posenetOutput);
+        //  for (let i = 0; i < maxPredictions; i++) {
+        //     const classPrediction =
+        //         prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+        //     labelContainer.childNodes[i].innerHTML = classPrediction;
+        //     }
             // MY OWN INPUT
         //  if(prediction[0].probability.toFixed(2) > prediction[1].probability.toFixed(2)){
         //         test.childNodes[0].innerHTML = "zero";
