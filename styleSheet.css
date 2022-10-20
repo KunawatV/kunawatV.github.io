@@ -1,0 +1,56 @@
+
+:root {
+ --up:10px;
+ --side:69px; 
+}
+
+body{
+    margin: 0;
+    background-color:#F1F1F1 ;
+}
+.flex {
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+}
+.main{
+    display:flex ;
+    justify-content: center;
+    height: fit-content;
+}
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2rem;
+}
+.sm{   
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.image{
+
+}
+.triangle {
+height: auto;
+width: 200px; 
+height: 200px;
+position: relative;
+background-image: url(./image/triangle/Asset\ 20.png);
+background-repeat: no-repeat;
+background-position: top;
+}
+#dot{
+    margin: 0px;
+    height: 0px ;
+    width: 0px;
+    border-radius: 50%;
+    position: absolute;
+    left: var(--side);
+    top: var(--up);
+    border: 0.5rem solid #FF6666;
+    transition: left 0.25s, top 0.25s;
+}

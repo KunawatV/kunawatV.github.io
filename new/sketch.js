@@ -11,15 +11,17 @@ PoseNet example using p5.js
 let video;
 let poseNet;
 let poses = [];
+let size = 200
 
 function setup() {
-  let size = 600
-  createCanvas(size,size)
+  
+  var canvas = createCanvas(size,size);
+  canvas.parent('webcam');
   video = createCapture(VIDEO);
   video.size(width, height);
 
   // Create a new poseNet method with a single detection
-  poseNet = ml5.poseNet(video, modelReady);
+  poseNet = ml5.poseNet(video);
   // This sets up an event that fills the global variable "poses"
   // with an array every time new poses are detected
   poseNet.on('pose', function(results) {
@@ -29,55 +31,23 @@ function setup() {
   video.hide();
 }
 
-function modelReady() {
-  select('#status').html('Model Loaded');
-}
 
   function mousePressed() {
   console.log(poses);
 }
 
 function draw() {
-  image(video, 0, 0, width, height);
-
+  translate(width,0); // move to far corner
+  scale(-1.0,1.0);    // flip x-axis backwards
+  image(video, 0, 0, width, height); //video on canvas, position, dimensions
+  // scale(-1.0,1.0);
   // We can call both functions to draw all keypoints and the skeletons
   drawKeypoints();
   drawSkeleton();
+  selectImage();
   
   
-  if (poses.length > 0) {
-    let pose = poses[0].pose;
 
-    // Create a pink ellipse for the nose
-    fill(213, 0, 143);
-    let nose = pose["nose"];
-
-    // Create a yellow ellipse for the right eye
-    let rightWrist = pose["rightWrist"];
-
-    // Create a yellow ellipse for the right eye;
-    let leftWrist = pose["leftWrist"];
-    
-    let leftHip = pose["leftHip"];
-    
-    let rightHip = pose["rightHip"];
-    
-    
-//     const arrX = [nose.x, rightWrist.x, leftWrist.x, rightHip.x, leftHip.x];
-//       const averageX = arrX.reduce((a, b) => a + b, 0) / arrX.length;
-    
-//     const arrY = [nose.y, rightWrist.y, leftWrist.y, rightHip.y, leftHip.y];
-//       const averageY = arrY.reduce((a, b) => a + b, 0) / arrY.length;
-    
-    const arrX = [ rightWrist.x, leftWrist.x];
-      const averageX = arrX.reduce((a, b) => a + b, 0) / arrX.length;
-    
-    const arrY = [ rightWrist.y, leftWrist.y];
-      const averageY = arrY.reduce((a, b) => a + b, 0) / arrY.length;
-    
-    ellipse(averageX, averageY, 20, 20);
-    
-  }
   
 }
 
@@ -114,4 +84,54 @@ function drawSkeleton() {
       line(partA.position.x, partA.position.y, partB.position.x, partB.position.y);
     }
   }
+}
+
+function selectImage(){
+  if (poses.length > 0) {
+    let pose = poses[0].pose;
+
+    // Create a pink ellipse for the nose
+    fill(213, 0, 143);
+    let nose = pose["nose"];
+
+    // Create a yellow ellipse for the right eye
+    let rightWrist = pose["rightWrist"];
+
+    // Create a yellow ellipse for the right eye;
+    let leftWrist = pose["leftWrist"];
+    
+    let leftHip = pose["leftHip"];
+    
+    let rightHip = pose["rightHip"];
+    
+    
+//     const arrX = [nose.x, rightWrist.x, leftWrist.x, rightHip.x, leftHip.x];
+//       const averageX = arrX.reduce((a, b) => a + b, 0) / arrX.length;
+    
+//     const arrY = [nose.y, rightWrist.y, leftWrist.y, rightHip.y, leftHip.y];
+//       const averageY = arrY.reduce((a, b) => a + b, 0) / arrY.length;
+    
+    // const arrX = [ rightWrist.x, leftWrist.x];
+      // const averageX = arrX.reduce((a, b) => a + b, 0) / arrX.length;
+    // 
+    // const arrY = [ rightWrist.y, leftWrist.y];
+      // const averageY = arrY.reduce((a, b) => a + b, 0) / arrY.length;
+    
+    let a = domain(nose.x)
+    let b = domain(leftWrist.y)
+    let c = domain(rightWrist.y)
+    let abc
+    abc = [c,b,a]
+    console.log(abc.join('-')+'.jpg')
+    let testImage = document.getElementById("test-image");
+    testImage.src = '../newimage/'+abc.join('-')+'.jpg'
+  }
+}
+function domain (arr){
+  let output;
+  output = Math.round(arr/size *7);
+  if (output > 7) {
+    output = 7
+  }
+  return output;
 }
