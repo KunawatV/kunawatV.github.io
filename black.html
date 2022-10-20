@@ -61,6 +61,10 @@
             border: 0.5rem solid #FF6666;
             transition: left 0.25s, top 0.25s;
         }
+        img{
+            height: 100vh;
+            width: auto;
+        }
 
     </style>
 
@@ -68,7 +72,7 @@
 <body onload="init()"   style="background-color:#000000 ;">
 <!-- <div  >Teachable Machine Pose Model</div> -->
 <!--     <button type="button" onclick="init()">Start</button> -->
-<section class="flex">
+<section class="flex" style="display:none;">
     <div class="main" style="background-color:#000000 ;border-radius: 1rem;">  
         <div class="left margin">
             <div id="webcam" class="sm">
