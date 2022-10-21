@@ -124,7 +124,7 @@ function selectImage(){
     abc = [c,b,a]
     console.log(abc.join('-')+'.jpg')
     let testImage = document.getElementById("test-image");
-    testImage.src = '../newimage/'+abc.join('-')+'.jpg'
+    testImage.src = './newimage/'+abc.join('-')+'.jpg'
   }
 }
 function domain (arr){
