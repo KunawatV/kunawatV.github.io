@@ -125,8 +125,8 @@ function selectImage(){
     let c = domain(normalize(nose.x))
     let abc
     abc = [a,b,c]
-    console.log(abc.join('-')+'.jpg')
-    // console.log(b)
+    // console.log(abc.join('-')+'.jpg')
+    // console.log(a,normalize(rightWrist.y)*10)
     let testImage = document.getElementById("test-image");
     testImage.src = './newimage/'+abc.join('-')+'.jpg'
   }
@@ -153,8 +153,22 @@ function normalize (arr){
 
 function domain(arr){
   let output
-  output = Math.round(arr * 7)
+  let interval = 10
+  let ulimit = interval - 1;
+  output = Math.floor(arr * interval)
+  if (output> ulimit) {
+    output = ulimit;
+  } else if (output < 0) {
+    output = 0;
+  }
   return output
 }
 
-Math.abs
+// let up =  aa * 0 +  bb* 157.2 + cc * 157.2;
+// let side =  aa * 92 +  bb* 0 + cc * 184;
+// var r = document.querySelector(':root');
+// 
+  // r.style.setProperty('--up', String(up)+"px");
+  // r.style.setProperty('--side', String(side)+"px");
+// 
+// console.log(String(up)+"px")
