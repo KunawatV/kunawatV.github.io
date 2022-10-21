@@ -117,21 +117,44 @@ function selectImage(){
     // const arrY = [ rightWrist.y, leftWrist.y];
       // const averageY = arrY.reduce((a, b) => a + b, 0) / arrY.length;
     
-    let a = domain(nose.x)
-    let b = domain(leftWrist.y)
-    let c = domain(rightWrist.y)
+    // Tallness
+    let a = domain(normalize(rightWrist.y))
+    //size 
+    let b = domain(gap(rightWrist.x,leftWrist.x))
+    //roundess
+    let c = domain(normalize(nose.x))
     let abc
-    abc = [c,b,a]
+    abc = [a,b,c]
     console.log(abc.join('-')+'.jpg')
+    // console.log(b)
     let testImage = document.getElementById("test-image");
     testImage.src = './newimage/'+abc.join('-')+'.jpg'
   }
 }
-function domain (arr){
+
+function gap (x,y){
   let output;
-  output = Math.round(arr/size *7);
-  if (output > 7) {
-    output = 7
-  }
+  output = Math.abs(normalize(x)- normalize(y));
   return output;
 }
+
+function normalize (arr){
+  let output;
+  output = arr/size;
+  // output = (Math.round((arr/ size)*10))/10; 
+  // if (output > 1) {
+    // output = 1
+  // } else if (output < 0){
+    // output = 0 
+  // }
+  return output;
+
+}
+
+function domain(arr){
+  let output
+  output = Math.round(arr * 7)
+  return output
+}
+
+Math.abs
