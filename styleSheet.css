@@ -68,7 +68,7 @@ body{
     transform:translateY(var(--z))rotate(-45deg);
  }
  .show{
-    background-color: rgba(0, 0, 0, 0.14);
+    background-color: rgba(0, 0, 0, 0.10);
  }
  .selectColor{
     background-color: #4B6572 !important;

@@ -91,32 +91,15 @@ function selectImage(){
   if (poses.length > 0) {
     let pose = poses[0].pose;
 
-    // Create a pink ellipse for the nose
-    fill(213, 0, 143);
     let nose = pose["nose"];
 
-    // Create a yellow ellipse for the right eye
     let rightWrist = pose["rightWrist"];
 
-    // Create a yellow ellipse for the right eye;
     let leftWrist = pose["leftWrist"];
     
     let leftHip = pose["leftHip"];
     
     let rightHip = pose["rightHip"];
-    
-    
-//     const arrX = [nose.x, rightWrist.x, leftWrist.x, rightHip.x, leftHip.x];
-//       const averageX = arrX.reduce((a, b) => a + b, 0) / arrX.length;
-    
-//     const arrY = [nose.y, rightWrist.y, leftWrist.y, rightHip.y, leftHip.y];
-//       const averageY = arrY.reduce((a, b) => a + b, 0) / arrY.length;
-    
-    // const arrX = [ rightWrist.x, leftWrist.x];
-      // const averageX = arrX.reduce((a, b) => a + b, 0) / arrX.length;
-    // 
-    // const arrY = [ rightWrist.y, leftWrist.y];
-      // const averageY = arrY.reduce((a, b) => a + b, 0) / arrY.length;
     
     // Tallness
     let a = normalize(rightWrist.y)
@@ -170,7 +153,6 @@ function moveDot (a,b,c){
     r.style.setProperty('--y', String(y)+"%");
     r.style.setProperty('--x', String(x)+"%");
     r.style.setProperty('--z', String(z)+"px");
-    console.log(z)
 }
 
 function layerColor(z) {
