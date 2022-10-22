@@ -106,11 +106,11 @@ function selectImage(){
     //size 
     let b = gap(rightWrist.x,leftWrist.x)
     //roundess
-    let c = normalize(nose.x)
+    let c = inbetween(normalize(nose.x),normalize(leftWrist.x),normalize(rightWrist.x),b)
     let abc
     abc = [domain(a),domain(b),domain(c)]
     // console.log(abc.join('-')+'.jpg')
-    // console.log(a,normalize(rightWrist.y)*10)
+    // console.log(domain(c))
     let testImage = document.getElementById("test-image");
     testImage.src = './newimage/'+abc.join('-')+'.jpg'
     moveDot(c,b,domain(a));
@@ -126,27 +126,48 @@ function gap (x,y){
   return output;
 }
 
+function inbetween(center,leftHand,rightHand,gap){
+  let output;
+  let ab;
+  ab = center - leftHand
+  
+  if (ab>0){
+    output = 0
+  }else{
+    output = Math.abs(center - leftHand)/gap;
+  }
+  return output;
+}
+
 function normalize (arr){
   let output;
   output = arr/size;
-
-  if (output> 1) {
-    output = ulimit/10;
-  } else if (output < 0) {
-    output = 0;
-  }
   return output;
 }
 
 function domain(arr){
   let output
   output = Math.floor(arr * interval)
+  if (output> ulimit) {
+    output = ulimit;
+  } else if (output < 0) {
+    output = 0;
+  }
   return output
 }
 
 function moveDot (a,b,c){
-  let x = a*100
-  let y = b*100
+  function correct(arr){
+    let output = arr
+    if (output> interval/10) {
+      output = interval/10;
+    } else if (output < 0) {
+      output = 0;
+    }
+    return output
+  }
+  let x = correct(a)*100
+  let y = correct(b)*100
   let z = c*10
   var r = document.querySelector(':root');
   
