@@ -47,6 +47,7 @@ function draw() {
   selectImage();
   
   
+  
 
   
 }
@@ -118,19 +119,23 @@ function selectImage(){
       // const averageY = arrY.reduce((a, b) => a + b, 0) / arrY.length;
     
     // Tallness
-    let a = domain(normalize(rightWrist.y))
+    let a = normalize(rightWrist.y)
     //size 
-    let b = domain(gap(rightWrist.x,leftWrist.x))
+    let b = gap(rightWrist.x,leftWrist.x)
     //roundess
-    let c = domain(normalize(nose.x))
+    let c = normalize(nose.x)
     let abc
-    abc = [a,b,c]
+    abc = [domain(a),domain(b),domain(c)]
     // console.log(abc.join('-')+'.jpg')
     // console.log(a,normalize(rightWrist.y)*10)
     let testImage = document.getElementById("test-image");
     testImage.src = './newimage/'+abc.join('-')+'.jpg'
+    moveDot(c,b,domain(a));
+    layerColor(domain(a))
   }
 }
+let interval = 10
+let ulimit = interval - 1
 
 function gap (x,y){
   let output;
@@ -141,34 +146,48 @@ function gap (x,y){
 function normalize (arr){
   let output;
   output = arr/size;
-  // output = (Math.round((arr/ size)*10))/10; 
-  // if (output > 1) {
-    // output = 1
-  // } else if (output < 0){
-    // output = 0 
-  // }
-  return output;
 
+  if (output> 1) {
+    output = ulimit/10;
+  } else if (output < 0) {
+    output = 0;
+  }
+  return output;
 }
 
 function domain(arr){
   let output
-  let interval = 10
-  let ulimit = interval - 1;
   output = Math.floor(arr * interval)
-  if (output> ulimit) {
-    output = ulimit;
-  } else if (output < 0) {
-    output = 0;
-  }
   return output
 }
 
-// let up =  aa * 0 +  bb* 157.2 + cc * 157.2;
-// let side =  aa * 92 +  bb* 0 + cc * 184;
-// var r = document.querySelector(':root');
-// 
-  // r.style.setProperty('--up', String(up)+"px");
-  // r.style.setProperty('--side', String(side)+"px");
-// 
-// console.log(String(up)+"px")
+function moveDot (a,b,c){
+  let x = a*100
+  let y = b*100
+  let z = c*10
+  var r = document.querySelector(':root');
+  
+    r.style.setProperty('--y', String(y)+"%");
+    r.style.setProperty('--x', String(x)+"%");
+    r.style.setProperty('--z', String(z)+"px");
+    console.log(z)
+}
+
+function layerColor(z) {
+  let layer = "l"+String(z);
+  let array = ["l0","l1","l2","l3","l4","l5","l6","l7","l8","l9"];
+  const index = array.indexOf(layer);
+if (index > -1) { // only splice array when item is found
+  array.splice(index, 1); // 2nd parameter means remove one item only
+}
+
+for (var i = 0; i < array.length; i++) {
+   var yeet = document.getElementById(array[i]);
+   yeet.classList.remove("selectColor");  
+}
+
+var element = document.getElementById(layer);
+element.classList.add("selectColor");
+  
+  
+}

@@ -1,7 +1,8 @@
 
 :root {
- --up:10px;
- --side:69px; 
+ --x:10%;
+ --y:10%; 
+ --z:10px;
 }
 
 body{
@@ -34,23 +35,74 @@ body{
 .image{
 
 }
-.triangle {
-height: auto;
-width: 200px; 
-height: 200px;
-position: relative;
-background-image: url(./image/triangle/Asset\ 20.png);
-background-repeat: no-repeat;
-background-position: top;
-}
-#dot{
-    margin: 0px;
-    height: 0px ;
-    width: 0px;
-    border-radius: 50%;
+.area {
+    display:flex;
+    justify-content:center;
+    padding-top: 30px;
+    padding-bottom: 270px;
+ }
+ .align{
     position: absolute;
-    left: var(--side);
-    top: var(--up);
-    border: 0.5rem solid #FF6666;
+    top: var(--x);
+    left: var(--y);
     transition: left 0.25s, top 0.25s;
-}
+ }
+ #dot{
+    margin: 0px;
+             height: 0px ;
+             width: 0px;
+             border-radius: 50%;
+             position: absolute;
+             left: -0.5rem;
+             top: -0.5rem;
+             border: 0.5rem solid #CE5F5F;
+ }
+ .square {
+    width:150px;
+    height:150px;
+    position: absolute;
+ }
+ .invis {
+    background-color: rgba(red, green, blue, 0);
+    z-index: 1;
+    transform:translateY(var(--z))rotate(-45deg);
+ }
+ .show{
+    background-color: rgba(0, 0, 0, 0.14);
+ }
+ .selectColor{
+    background-color: #4B6572 !important;
+ }
+ .stack{
+    position: absolute;
+ }
+ #l0{
+    transform: translateY(0px)rotate(-45deg);
+ }
+ #l1{
+    transform: translateY(10px)rotate(-45deg);
+ }
+ #l2{
+    transform: translateY(20px)rotate(-45deg);
+ }
+ #l3{
+    transform: translateY(30px)rotate(-45deg);
+ }
+ #l4{
+    transform: translateY(40px)rotate(-45deg);
+ }
+ #l5{
+    transform: translateY(50px)rotate(-45deg);
+ }
+ #l6{
+    transform: translateY(60px)rotate(-45deg);
+ }
+ #l7{
+    transform: translateY(70px)rotate(-45deg);
+ }
+ #l8{
+    transform: translateY(80px)rotate(-45deg);
+ }
+ #l9{
+    transform: translateY(90px)rotate(-45deg);
+ }
