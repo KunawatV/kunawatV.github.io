@@ -11,7 +11,7 @@ PoseNet example using p5.js
 let video;
 let poseNet;
 let poses = [];
-let size = 200
+let size = 200;
 
 function setup() {
   
