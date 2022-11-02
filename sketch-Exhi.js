@@ -50,7 +50,7 @@ function draw() {
   // testdraw()
    
 }
-//test
+
 let list = [];
 let mid;
 function midSelector (){
@@ -67,7 +67,7 @@ function midSelector (){
   mid = list.findIndex(indexFinder);
 }
 
-
+// test
 function testdraw () {
  // Loop through all the poses detected
  for (let i = 0; i < poses.length; i += 1) {
