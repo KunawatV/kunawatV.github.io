@@ -145,7 +145,7 @@ function selectImage(){
     // console.log(abc.join('-')+'.jpg')
     // console.log(domain(c))
     let testImage = document.getElementById("test-image");
-    testImage.src = './blackimage/'+abc.join('-')+'.jpg'
+    testImage.src = './newimage/'+abc.join('-')+'.jpg'
     moveDot(c,b,domain(a));
     layerColor(domain(a))
   }
