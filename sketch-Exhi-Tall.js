@@ -50,7 +50,7 @@ function draw() {
   // testdraw()
    
 }
-//test
+
 let list = [];
 let mid;
 function midSelector (){

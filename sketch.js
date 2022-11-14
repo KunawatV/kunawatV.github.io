@@ -11,6 +11,7 @@ PoseNet example using p5.js
 let video;
 let poseNet;
 let poses = [];
+let ctx;
 let size = 200;
 
 function setup() {
@@ -42,15 +43,47 @@ function draw() {
   image(video, 0, 0, width, height); //video on canvas, position, dimensions
   // scale(-1.0,1.0);
   // We can call both functions to draw all keypoints and the skeletons
+  midSelector();
   drawKeypoints();
   drawSkeleton();
   selectImage();
-  
-  
-  
-
-  
+  // testdraw()
+   
 }
+
+let list = [];
+let mid;
+function midSelector (){
+  let list = [];
+  let listTest = [];
+  for (let i = 0; i < poses.length; i += 1) {
+    let noYou = poses[i].pose.nose.x;
+    let central = Math.pow((noYou-(size/2)),2)
+    list.push(central)
+    listTest.push(noYou)
+  }
+  const indexFinder = (element) => element == Math.min(...list);
+  // console.log(list,listTest,Math.min(...list),list.findIndex(indexFinder));
+  mid = list.findIndex(indexFinder);
+}
+
+// test
+function testdraw () {
+ // Loop through all the poses detected
+ for (let i = 0; i < poses.length; i += 1) {
+  // For each pose detected, loop through all the keypoints
+  for (let j = 0; j < poses[i].pose.keypoints.length; j += 1) {
+    let keypoint = poses[i].pose.keypoints[j];
+    // Only draw an ellipse is the pose probability is bigger than 0.2
+    if (keypoint.score > 0.2) {
+      fill(255, 0, 0);
+        noStroke();
+        ellipse(keypoint.position.x, keypoint.position.y, 10, 10);
+      }
+    }
+  }
+}
+
 
 // A function to draw ellipses over the detected keypoints
 function drawKeypoints()  {
@@ -58,7 +91,7 @@ function drawKeypoints()  {
   // for (let i = 0; i < poses.length; i++) {
      // For each pose detected, loop through all the keypoints
   if (poses.length > 0) {
-    let pose = poses[0].pose;
+    let pose = poses[mid].pose;
     for (let j = 0; j < pose.keypoints.length; j++) {
       // A keypoint is an object describing a body part (like rightArm or leftShoulder)
       let keypoint = pose.keypoints[j];
@@ -76,7 +109,7 @@ function drawKeypoints()  {
 function drawSkeleton() {
   // Loop through all the skeletons detected
   if (poses.length > 0) {
-    let skeleton = poses[0].skeleton;
+    let skeleton = poses[mid].skeleton;
     // For every skeleton, loop through all body connections
     for (let j = 0; j < skeleton.length; j++) {
       let partA = skeleton[j][0];
